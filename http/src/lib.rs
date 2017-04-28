@@ -294,6 +294,7 @@ impl<M: jsonrpc::Metadata, S: jsonrpc::Middleware<M>> ServerBuilder<M, S> {
 
 	/// Start this JSON-RPC HTTP server trying to bind to specified `SocketAddr`.
 	pub fn start_http(self, addr: &SocketAddr) -> ServerResult {
+    println!("STARTING THE HTTP SERVER");
 		let cors_domains = self.cors_domains;
 		let request_middleware = self.request_middleware;
 		let allowed_hosts = self.allowed_hosts;
