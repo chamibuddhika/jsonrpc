@@ -310,6 +310,7 @@ impl From<IoHandler> for MetaIoHandler<()> {
 }
 
 fn read_request(request_str: &str) -> Result<Request, Error> {
+  println!("Request : {}", request_str);
 	serde_json::from_str(request_str).map_err(|_| Error::new(ErrorCode::ParseError))
 }
 
